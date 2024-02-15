@@ -31,7 +31,7 @@ public class AppTests extends AbstractTest implements IMobileUtils {
         HomePage homePage = new HomePage(getDriver());
         Assert.assertTrue(homePage.isHeyHomeTextPresent(), "Home page is not opened");
 
-        WeatherPage weatherPage = homePage.locationWeatherImageClick();
+        WeatherPage weatherPage = homePage.clickOnLocationWeatherImage();
         Assert.assertTrue(weatherPage.isWeatherForecastTitlePresent(), "Weather page is not opened");
     }
 
@@ -40,8 +40,8 @@ public class AppTests extends AbstractTest implements IMobileUtils {
         HomePage homePage = new HomePage(getDriver());
         Assert.assertTrue(homePage.isHeyHomeTextPresent(), "Home page is not opened");
 
-        RecipePage recipePage = homePage.firstCocktailClick();
-        Assert.assertTrue(recipePage.isRecipePageOpen(), "Recipe page is not opened");
+        RecipePage recipePage = homePage.clickOnFirstCocktailImage();
+        Assert.assertTrue(recipePage.isRecipePageOpened(), "Recipe page is not opened");
     }
 
     @Test(description = "Check that after clicking on a 'Surprise me' button in bottom of the page, page with recipe will open")
@@ -49,8 +49,8 @@ public class AppTests extends AbstractTest implements IMobileUtils {
         HomePage homePage = new HomePage(getDriver());
         Assert.assertTrue(homePage.isHeyHomeTextPresent(), "Home page is not opened");
 
-        RecipePage recipePage = homePage.surpriseMeClick();
-        Assert.assertTrue(recipePage.isRecipePageOpen(), "Recipe page is not opened");
+        RecipePage recipePage = homePage.clickOnSurpriseMeButton();
+        Assert.assertTrue(recipePage.isRecipePageOpened(), "Recipe page is not opened");
     }
 
     @Test(description = "Check that user can view all places by clicking 'Manage places' button after clicking on a gear button in upper right corner")
@@ -58,8 +58,8 @@ public class AppTests extends AbstractTest implements IMobileUtils {
         HomePage homePage = new HomePage(getDriver());
         Assert.assertTrue(homePage.isHeyHomeTextPresent(), "Home page is not opened");
 
-        homePage.gearButtonClick();
-        YourPlacesPage yourPlacesPage = homePage.managePlacesClick();
+        homePage.clickOnGearButton();
+        YourPlacesPage yourPlacesPage = homePage.clickOnManagePlaces();
         Assert.assertTrue(yourPlacesPage.isYourPlacesTitlePresent(), "Your places page is not opened");
     }
 
@@ -68,8 +68,8 @@ public class AppTests extends AbstractTest implements IMobileUtils {
         HomePage homePage = new HomePage(getDriver());
         Assert.assertTrue(homePage.isHeyHomeTextPresent(), "Home page is not opened");
 
-        homePage.gearButtonClick();
-        YourPlacesPage yourPlacesPage = homePage.managePlacesClick();
+        homePage.clickOnGearButton();
+        YourPlacesPage yourPlacesPage = homePage.clickOnManagePlaces();
         Assert.assertTrue(yourPlacesPage.isYourPlacesTitlePresent(), "Your places page is not opened");
 
         HomePage newHomePage = yourPlacesPage.addNewPlace(PLACE_NAME);

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HomePage extends AbstractPage {
 
-    @FindBy(xpath = "//android.view.View[@content-desc='Hey Friend!']")
+    @FindBy(xpath = "//android.view.View[contains(@content-desc, 'Hey')]")
     ExtendedWebElement heyHomeText;
 
     @FindBy(xpath = "//android.widget.ImageView[contains(@content-desc, 'Wind')]")
@@ -18,7 +18,7 @@ public class HomePage extends AbstractPage {
     ExtendedWebElement homePlaceName;
 
     @FindBy(xpath = "(//android.widget.ImageView)[2]")
-    ExtendedWebElement firstCocktail;
+    ExtendedWebElement firstCocktailImage;
 
     @FindBy(xpath = "//android.widget.Button[@content-desc='Surprise Me!']")
     ExtendedWebElement surpriseMeButton;
@@ -37,27 +37,27 @@ public class HomePage extends AbstractPage {
         return heyHomeText.isPresent();
     }
 
-    public WeatherPage locationWeatherImageClick(){
+    public WeatherPage clickOnLocationWeatherImage(){
         locationWeatherImage.click();
         return new WeatherPage(getDriver());
     }
 
-    public RecipePage firstCocktailClick(){
-        firstCocktail.click();
+    public RecipePage clickOnFirstCocktailImage(){
+        firstCocktailImage.click();
         return new RecipePage(getDriver());
     }
 
-    public RecipePage surpriseMeClick(){
+    public RecipePage clickOnSurpriseMeButton(){
         surpriseMeButton.click();
         return new RecipePage(getDriver());
     }
 
-    public void gearButtonClick(){
+    public void clickOnGearButton(){
         gearButton.click();
         waitUntil(ExpectedConditions.visibilityOf(managePlacesButton.getElement()), 10);
     }
 
-    public YourPlacesPage managePlacesClick(){
+    public YourPlacesPage clickOnManagePlaces(){
         managePlacesButton.click();
         return new YourPlacesPage(getDriver());
     }
