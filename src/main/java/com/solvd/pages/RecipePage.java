@@ -18,14 +18,14 @@ public class RecipePage extends AbstractPage implements IMobileUtils {
         super(driver);
     }
 
-    public boolean isRecipePageOpened(){
+    public boolean isRecipePageOpened() {
         boolean ingredientsViewTitlePresent = ingredientsViewTitle.isPresent();
-        swipeToSeePreparationViewTitle();
+        scrollDown();
         boolean preparationViewTitlePresent = preparationViewTitle.isPresent();
         return ingredientsViewTitlePresent && preparationViewTitlePresent;
     }
 
-    public void swipeToSeePreparationViewTitle(){
+    public void scrollDown() {
         int height = getDriver().manage().window().getSize().height;
         int width = getDriver().manage().window().getSize().width;
         int startX = (int) (width * 0.5);

@@ -21,11 +21,11 @@ public class YourPlacesPage extends AbstractPage {
         super(driver);
     }
 
-    public boolean isYourPlacesTitlePresent(){
+    public boolean isYourPlacesTitlePresent() {
         return yourPlacesTitle.isPresent();
     }
 
-    public HomePage addNewPlace(String placeName){
+    public HomePage addNewPlace(String placeName) {
         placeInput.click();
         placeInput.type(placeName);
         waitUntil(ExpectedConditions.visibilityOf(exactFirstPlace.format(placeName).getElement()), 10);

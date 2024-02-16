@@ -17,12 +17,12 @@ public class AppTests extends AbstractTest implements IMobileUtils {
     private static final String PLACE_NAME = "Lviv";
 
     @BeforeTest
-    public void startAppBeforeTest(){
+    public void startAppBeforeTest() {
         startApp(APP);
     }
 
     @AfterTest
-    public void terminateAppAfterTest(){
+    public void terminateAppAfterTest() {
         terminateApp(APP);
     }
 

@@ -33,36 +33,36 @@ public class HomePage extends AbstractPage {
         super(driver);
     }
 
-    public boolean isHeyHomeTextPresent(){
+    public boolean isHeyHomeTextPresent() {
         return heyHomeText.isPresent();
     }
 
-    public WeatherPage clickOnLocationWeatherImage(){
+    public WeatherPage clickOnLocationWeatherImage() {
         locationWeatherImage.click();
         return new WeatherPage(getDriver());
     }
 
-    public RecipePage clickOnFirstCocktailImage(){
+    public RecipePage clickOnFirstCocktailImage() {
         firstCocktailImage.click();
         return new RecipePage(getDriver());
     }
 
-    public RecipePage clickOnSurpriseMeButton(){
+    public RecipePage clickOnSurpriseMeButton() {
         surpriseMeButton.click();
         return new RecipePage(getDriver());
     }
 
-    public void clickOnGearButton(){
+    public void clickOnGearButton() {
         gearButton.click();
         waitUntil(ExpectedConditions.visibilityOf(managePlacesButton.getElement()), 10);
     }
 
-    public YourPlacesPage clickOnManagePlaces(){
+    public YourPlacesPage clickOnManagePlaces() {
         managePlacesButton.click();
         return new YourPlacesPage(getDriver());
     }
 
-    public boolean isAddedPlaceNamePresent(String placeName){
+    public boolean isAddedPlaceNamePresent(String placeName) {
         return homePlaceName.format(placeName).isPresent();
     }
 }

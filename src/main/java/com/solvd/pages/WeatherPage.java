@@ -14,7 +14,7 @@ public class WeatherPage extends AbstractPage {
         super(driver);
     }
 
-    public boolean isWeatherForecastTitlePresent(){
+    public boolean isWeatherForecastTitlePresent() {
         return weatherForecastTitle.isPresent();
     }
 }
